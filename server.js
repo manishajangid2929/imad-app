@@ -24,7 +24,7 @@ function createTemplate(data)
     var heading=data.heading ;
     var content =data.content ;
 
-var htmlTemplate =
+var htmlTemplate =`
 {
    <html>
     <head>
@@ -53,7 +53,7 @@ var htmlTemplate =
                    ${content}
                      </div>
     </body>
-</html>
+</html>`
 return htmlTemplate ;
  
 }
@@ -68,7 +68,7 @@ app.get('/', function (req, res) {
 
 app.get(`/article1`,function(req,res)
 {
-    res.sendFile(path.join(__dirname, 'ui', 'article1.html'));
+    res.sendFile(createTemplate(article_one));
     
 });
 app.get(`/article2`,function(req,res)
